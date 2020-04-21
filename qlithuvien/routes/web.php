@@ -16,3 +16,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('book_index', 'book_controller@book_index')->name('book_index');
+
+Route::get('book_create', 'book_controller@book_create')->name('book_create');
+Route::post('book_create', 'book_controller@book_store')->name('book_store');
+
+Route::get('book_delete/{id}', 'book_controller@book_delete')->name('book_delete');
