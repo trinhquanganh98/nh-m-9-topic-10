@@ -36,6 +36,42 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::middleware(['checkacl:admin'], ['auth'])->group(function () {
 
 
+    // modulle gallery
+    Route::prefix('gallery')->group(function () {
+
+        // Route::middleware(['checkacl:user-list'])->get('/', 'UserController@index')->name('user.index');
+        // Route::middleware(['checkacl:user-add'])->get('/create', 'UserController@create')->name('user.add');
+        // Route::middleware(['checkacl:user-add'])->post('/create', 'UserController@store')->name('user.store');
+        // Route::middleware(['checkacl:user-edit'])->get('/edit/{id}', 'UserController@edit')->name('user.edit');
+        // Route::middleware(['checkacl:user-edit'])->post('/edit/{id}', 'UserController@update')->name('user.edit');
+        // Route::middleware(['checkacl:user-delete'])->get('/delete/{id}', 'UserController@delete')->name('user.delete');
+    
+        Route::get('/', 'GalleryController@index')->name('gallery.index');
+        Route::get('/create', 'GalleryController@create')->name('gallery.add');
+        Route::post('/create', 'GalleryController@store')->name('gallery.store');
+        // Route::get('/edit/{id}', 'ItemController@edit')->name('item.edit');
+        // Route::post('/edit/{id}', 'ItemController@update')->name('item.edit');
+        // Route::get('/delete/{id}', 'ItemController@delete')->name('item.delete');
+    });
+    
+    
+    // modulle category
+    Route::prefix('category')->group(function () {
+
+        // Route::middleware(['checkacl:user-list'])->get('/', 'UserController@index')->name('user.index');
+        // Route::middleware(['checkacl:user-add'])->get('/create', 'UserController@create')->name('user.add');
+        // Route::middleware(['checkacl:user-add'])->post('/create', 'UserController@store')->name('user.store');
+        // Route::middleware(['checkacl:user-edit'])->get('/edit/{id}', 'UserController@edit')->name('user.edit');
+        // Route::middleware(['checkacl:user-edit'])->post('/edit/{id}', 'UserController@update')->name('user.edit');
+        // Route::middleware(['checkacl:user-delete'])->get('/delete/{id}', 'UserController@delete')->name('user.delete');
+    
+        Route::get('/', 'CategoryController@index')->name('category.index');
+        Route::get('/create', 'CategoryController@create')->name('category.add');
+        Route::post('/create', 'CategoryController@store')->name('category.store');
+        Route::get('/edit/{id}', 'CategoryController@edit')->name('category.edit');
+        Route::post('/edit/{id}', 'CategoryController@update')->name('category.edit');
+        Route::get('/delete/{id}', 'CategoryController@delete')->name('category.delete');
+    });
 
     // modulle user
     Route::prefix('users')->group(function () {
