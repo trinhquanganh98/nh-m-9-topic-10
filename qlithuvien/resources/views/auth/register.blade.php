@@ -54,6 +54,14 @@
                         </div>
 
                         <div class="form-group row">
+                            <label for="valid" class="col-md-4 col-form-label text-md-right">valid</label>
+
+                            <div class="col-md-6">
+                                <input id="valid" type="text" name="valid" >
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
                             <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
 
                             <div class="col-md-6">
