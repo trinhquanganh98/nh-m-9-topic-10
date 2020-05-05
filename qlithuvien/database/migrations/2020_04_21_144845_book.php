@@ -21,7 +21,9 @@ class Book extends Migration
             $table->string('book_view');
             $table->string('book_writer');
             $table->string('book_status');
-            $table->string('book_detail');
+            $table->longText('book_detail');
+            $table->string('book_amount');
+            $table->string('book_borrow');
             $table->timestamps();
         });
     }
