@@ -148,7 +148,21 @@ body {
 @media only screen and (max-width: 767px)
 {
 	
-	
+.I-flash_deal .flash_deal_wrapper .flash_deal_content .flash_deal_list_item .flash_deal_item{
+    width: 50%;
+}
+.I-gallery .gallery_wrapper .gallery_content .gallery_list_item .gallery_item{
+    width: 100%;
+}
+.I-category .category_wrapper .category_content .category_list_item .category_item{
+    width: 50%;
+}
+.I-for_user .for_user_wrapper .for_user_content .for_user_list_item .for_user_item{
+    width: 50%;
+}
+.skin_item{
+    width: 50% !important;
+}
 }
 
 /************

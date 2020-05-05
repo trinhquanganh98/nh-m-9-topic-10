@@ -1,359 +1,484 @@
-.I-header{
-    width: 100%;
-    height: 100%;
+.I-user_header{
+	width: 100%;
+	height: 50px;
+	border-bottom: 1px solid #DDDDDD;
 }
-.I-header .logo{
-    float: left;
-    width: 30%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    font-size: 36px;
-    color: #000;
+.I-user_header .logo_wrapper{
+	float: left;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding: 0 30px;
+	font-size: 24px;
 }
-.I-header .search{
-    float: left;
-    width: 40%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.I-user_header .user_wrapper{
+	float: right;
+	height: 100%;
+	display: flex;
+	align-items: center;
 }
-.I-header .search input{
-    border: 1px solid #a3a3a3;
-    width: 400px;
-    height: 30px;
-    padding: 0 10px;
+.I-user_header .user_wrapper .message{
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-.I-header .search a{
-    width: 30px;
-    height: 30px;
-    background-color: #fff;
-    border: 1px solid #a3a3a3;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #000;
+.I-user_header .user_wrapper .notification{
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-.I-header .login{
-    float: left;
-    width: 30%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+.I-user_header .user_wrapper .user{
+	width: 40px;
+	height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-.I-header .login a{
-    padding: 0 10px;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid #a3a3a3;
-    margin: 0 5px;
-    color: #000;
+.I-user_nav{
+	width: 100%;
+	height: auto;
 }
-
-.I-body_list_category{
-    width: 100%;
-    margin: 50px 0;
-    overflow: hidden;
+.I-user_nav .user_nav_wrapper{
+	margin: 0 auto;
+	height: 50px;
+	transition: all 300ms ease;
 }
-.I-body_list_category .title{
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 32px;
+.I-user_nav .user_nav_wrapper .open_list_nav i{
+	font-size: 24px;
+	transition: all 300ms ease;
 }
-.I-body_list_category .content{
-    margin: 50px 0 0 0;
-    width: 100%;
+.I-user_nav .user_nav_wrapper .list_nav{
+	float: left;
+	width: 1280px;
 }
-.I-body_list_category .content ul{
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+.I-user_nav .user_nav_wrapper .list_nav .item_nav{
+	position: relative;
+	float: left;
+	width: 50px;
+	height: 50px;
+	padding: 10px;
+	cursor: pointer;
 }
-.I-body_list_category .content ul li{
-    float: left;
-    width: calc(20% - 10px);
-    height: 30px;
-    margin: 5px;
+.I-user_nav .user_nav_wrapper .list_nav .item_nav .dropdown{
+	position: absolute;
+	top: 45px;
+	left: 0;
+	width: 150px;
+	padding: 10px;
+	background-color: #fff;
+	border: 1px solid #DDDDDD;
+	display: none;
 }
-.I-body_list_category .content ul li a{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
-    border-radius: 5px;
-    color: #fff;
-    background-color: #337ab7;
+.I-user_nav .user_nav_wrapper .list_nav .item_nav .dropdown .sub_item{
+	width: 100%;
+	height: 30px;
+	display: flex;
+	align-items: center;
 }
-.I-body_list_category .content ul li a:hover{
-    color: #000;
+.I-user_nav .user_nav_wrapper .list_nav .item_nav .dropdown:before{
+	position: absolute;
+	content: "";
+	top: -5px;
+	left: 19px;
+	transform: rotate(45deg);
+	width: 10px;
+	height: 10px;
+	background-color: #fff;
+	border-top: 1px solid #DDDDDD;
+	border-left: 1px solid #DDDDDD;
 }
-.I-body_list_book{
-    width: 100%;
-    overflow: hidden;
-    margin: 20px 0;
+.I-user_nav .user_nav_wrapper .list_nav .item_nav:hover .dropdown{
+	display: block;
 }
-.I-body_list_book .title{
-    width: 100%;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    background-color: #337ab7;
-    color: #fff;
-    padding: 0 30px;
+.I-user_nav .user_nav_wrapper .list_nav .item_nav .link_nav{
+	width: 100%;
+	height: 100%;
+	border: 1px solid #ddd;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-.I-body_list_book .content{
-    width: 100%;
+.I-data{
+	width: 100%;
+	overflow: hidden;
 }
-.I-body_list_book .content .book_wrapper{
-    float: left;
-    width: calc(16.66% - 40px);
-    overflow: hidden;
-    margin: 20px;
+.I-data .data_item_wrapper{
+	float: left;
+	width: 25%;
+	height: 100px;
+	padding: 10px;
 }
-
-.I-wrapper_book{
-    width: 100%;
-    margin: 50px 0;
+.I-data .data_item_wrapper .data_item{
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	border-radius: 5px;
+    box-shadow: 0 0px 8px 2px #ccc;
 }
-.I-wrapper_book .sidebar{
-    float: left;
-    width: 20%;
-    overflow: hidden;
-    padding: 0 20px;
+.I-form_input{
+	width: 100%;
+	/*overflow: hidden;*/
 }
-.I-wrapper_book .sidebar .sidebar_wrapper{
-    width: 100%;
-    height: 100%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-    background-color: #fff;
+.I-form_input .form_input_wrapper{
+	width: 100%;
+	padding: 10px;
 }
-.I-wrapper_book .sidebar .sidebar_wrapper .title{
-    width: 100%;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 18px;
-    background-color: #337ab7;
-    color: #fff;
+.I-form_input .form_input_wrapper .form_input{ 
+	width: 100%;
+	height: 100%;
+	background-color: #fff;
+	border-radius: 5px;
+    box-shadow: 0 0px 8px 2px #ccc;
+    /*overflow: hidden;*/
 }
-.I-wrapper_book .sidebar .sidebar_wrapper ul{
-    list-style-type: none;;
-    margin: 0;
-    padding: 10px 20px;
+.I-form_input .form_input_wrapper .form_input .title_form{
+	width: 100%;
+	height: 50px;
+	padding: 0 20px;
+	font-size: 24px;
 }
-.I-wrapper_book .sidebar .sidebar_wrapper ul li{
-    width: 100%;
-    height: 30px;
-    margin: 5px 0;
-}
-.I-wrapper_book .sidebar .sidebar_wrapper ul li a{
-    width: 100%;
-    height: 100%;
-    display: flex;
-    align-items: center;
-}
-.I-wrapper_book .sidebar .sidebar_wrapper ul li a .icon{
-    
-}
-.I-wrapper_book .sidebar .sidebar_wrapper ul li a .text{
-    margin: 0 0 0 10px;
-    transition: all 300ms ease;
-}
-.I-wrapper_book .sidebar .sidebar_wrapper ul li a:hover .text{
-    margin: 0 0 0 20px;
-}
-.I-wrapper_book .content{
-    float: left;
-    width: 80%;
-    padding: 0 20px;
-    overflow: hidden;
-}
-.I-wrapper_book .content .content_wrapper{
-    width: 100%;
-    height: 100%;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-    background-color: #fff;
-}
-.I-wrapper_book .content .content_wrapper .title{
-    width: 100%;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    background-color: #337ab7;
-    color: #fff;
-    padding: 0 30px;
-}
-.I-wrapper_book .content .content_wrapper .list_book_wrapper{
-    width: 100%;
+.I-form_input .form_input_wrapper .form_input .body_form{
+	width: 100%;
+	height: 100%;
     padding: 20px;
 }
-.I-wrapper_book .content .content_wrapper .list_book_wrapper .list_book{
-    width: 100%;
-    height: 100%;
+.I-form_input .form_input_wrapper .form_input .body_form .input_wrapper{
+	width: 100%;
+	margin: 0 0 20px 0;
 }
-.I-wrapper_book .content .content_wrapper .list_book_wrapper .list_book .book_wrapper{
-    float: left;
-    width: calc(20% - 40px);
+.I-form_input .form_input_wrapper .form_input .body_form .input_wrapper .input_title{
+	width: 100%;
+	height: 30px;
+	font-size: 16px;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .input_wrapper .input_form{
+	width: 100%;
+	/*overflow: hidden;*/
+}
+.I-form_input .form_input_wrapper .form_input .body_form .input_wrapper .input_form input{
+	border: 1px solid #ccc;
+	width: 100%;
+	height: 40px;
+	padding: 10px;
+	border-radius: 5px;
+	font-size: 16px;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .input_wrapper .input_form.image_loader{
+	position: relative;
+	border: 1px solid #ccc;
+	width: 100%;
+	height: 200px;
+	padding: 10px;
+	border-radius: 5px;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .input_wrapper .input_form input[type=file]{
+	display: none;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .input_wrapper .input_form label{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	cursor: pointer;
+	z-index: 2;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .input_wrapper .input_form .image_loading{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	z-index: 1;
+	opacity: .5;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .input_wrapper .input_form .image_loading img{
+	width: 100px;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .input_wrapper .input_button{
+	width: 100%;
+	height: 100%;
+	border: none;
+	overflow: hidden;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .input_wrapper .input_button button{
+	float: right;
+	padding: 5px 30px;
+	height: 100%;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .input_wrapper .input_button button:not(:last-child){
+	margin: 0 0 0 10px;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .input_wrapper .checkbox_item_wrapper{
+	width: 100%;
+	overflow: hidden;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .input_wrapper .checkbox_item_wrapper .checkbox_item{
+	height: 30px;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .select_form{
+	/*width: 100%;*/
+	height: 40px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	cursor: pointer;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .select_form select{
+	display: none;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .select_form .select_wrapper{
+	position: relative;
+	width: 100%;
+	height: 100%;
+	padding: 5px 20px;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .select_form .select_wrapper .select_item{
+	font-size: 16px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .select_form .select_wrapper .select_icon{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .select_form .select_wrapper .option_wrapper{
+	position: absolute;
+	top: 110%;
+	left: 0;
+	width: 100%;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 10px 0;
+	display: none;
+	z-index: 999;
+    box-shadow: 0 0px 8px 2px #ccc;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .select_form.is-open .select_wrapper .option_wrapper{
+	display: block;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .select_form.is-open .select_wrapper .select_icon{
+	transform: rotateX(180deg);
+	top: 7px;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .select_form .select_wrapper .option_wrapper .option_item{
+	float: left;
+	width: 100%;
+	height: 30px;
+	padding: 0 10px;
+	display: flex;
+	align-items: center;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .select_form .select_wrapper .option_wrapper .option_item:hover{
+	background-color: #007bff;
+	color: #fff;
+}
+.I-form_input .form_input_wrapper .form_input .body_form .select_form .select_wrapper .option_wrapper .option_item .option_text{
+	width: 100%;
     overflow: hidden;
-    margin: 20px;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
 }
-.I-wrapper_book .content .content_wrapper .book_detail{
-    width: 100%;
-    height: 100%;
-    padding: 20px;
+/*.I-form_input .form_input_wrapper .form_input .body_form .select_form{
+	width: 100%;
+	height: 100%;
+}*/
+
+.I-checkbox{
+	padding: 0 20px;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+.I-checkbox .rect{
+	width: 20px;
+	height: 20px;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	margin: 0 10px 0 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 300ms ease;
+}
+.I-checkbox .rect i{
+	margin: 1px 0 0 0;
+	font-size: 12px;
+	color: #fff;
+	transform: scale(0);
+	transition: all 300ms ease;
+}
+.I-checkbox label{
+	height: 100%;
+	display: flex;
+	align-items: center;
+	margin: 0;
+	cursor: pointer;
+}
+.I-checkbox label .text{
+	position: relative;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	font-size: 20px;
+	color: #ccc;
+	transition: all 300ms ease;
+}
+.I-checkbox label .text::before{
+	position: absolute;
+	content: "";
+	top: 50%;
+	left: 0;
+	width: 100%;
+	height: 1px;
+	background-color: #000;
+	transition: all 300ms ease;
+}
+.I-checkbox label.is-select .rect{
+	border: 1px solid #007bff;
+	background-color: #007bff;
+}
+.I-checkbox label.is-select .rect i{
+	transform: scale(1);
+}
+.I-checkbox label.is-select .text{
+	color: #000;
+}
+.I-checkbox label.is-select .text::before{
+	width: 0;
+}
+.I-checkbox input{
+	display: none;
+}
+.I-table{
+	width: 100%;
+	overflow: hidden;
+	padding: 10px;
+}
+.I-table .table_wrapper{
+	width: 100%;
+	overflow: hidden;
+	border-radius: 5px;
+	background-color: #fff;
+	padding: 10px;
+    box-shadow: 0 0px 8px 2px #ccc;
+}
+.I-table .table_wrapper .title_table{
+	width: 100%;
+	height: 50px;
+	margin: 0 0 10px 0;
+	font-size: 24px;
+	font-weight: bold;
+}
+.I-table .table_wrapper .title_table .title_name{
+	float: left;
+	width: 50%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+}
+.I-table .table_wrapper .title_table .title_side{
+	float: left;
+	width: 50%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+}
+.I-table .table_wrapper .table_pagination{
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	font-weight: bold;
+}
+.I-table .table_wrapper .status_table{
+	padding: 5px 10px;
+	font-weight: bold;
+	float: left;
+	border-radius: 5px;
+}
+.I-table .table_wrapper .action_table{
+	padding: 5px 10px;
+	font-weight: bold;
+	float: left;
+	border-radius: 5px;
+	border: 1px solid #ccc;
+	cursor: pointer;
+}
+.I-table .table_wrapper .open_sub_table{
+	cursor: pointer;
+}
+.I-table .table_wrapper .sub_table{
+	margin: 0;
+	height: 50px;
+	overflow: hidden;
+}
+.I-table .table_wrapper .sub_table .sub_table_wrapper{
+	padding: 0;
+}
+.I-table .table_wrapper .sub_table .sub_table_wrapper .sub_table_title{
+	margin: 0;
+}
+.I-table .table_wrapper .sub_table .sub_table_wrapper .sub_table_body{
+	width: 100%;
+	display: none;
+	overflow: hidden;
+	padding: 10px;
+}
+.I-table .table_wrapper .sub_table.is-open .sub_table_wrapper .sub_table_body{
+	display: block;
+}
+
+.I-button{
+	padding: 5px 30px;
+	border: none;
+	border-radius: 5px;
+	font-size: 16px;
+}
+.I-button:hover{
+	color: #fff;
+}
+.I-image{
+	position: relative;
+	float: left;
+	margin: 10px;
+	width: 100px;
+	overflow: hidden;
+}
+.I-image .image_wrapper{
+	width: 100px;
+	height: 100px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
+	cursor: pointer;
+}
+.I-image .image_wrapper img{
+	width: 100%;
+}
+.I-image .image_title{
+	width: 100%;
+	height: 50px;
     overflow: hidden;
+    white-space: nowrap; 
+    text-overflow: ellipsis;
 }
-.I-wrapper_book .content .content_wrapper .book_detail .title_book{
-    width: 100%;
-    padding: 0 0 20px 0;
-    border-bottom: 1px solid #a3a3a3;  
-    overflow: hidden;
+.I-image .image_url{
+	position: absolute;
+	z-index: -1;
 }
-.I-wrapper_book .content .content_wrapper .book_detail .title_book .image_book{
-    float: left;
-    width: 30%;
-}
-.I-wrapper_book .content .content_wrapper .book_detail .title_book .image_book img{
-    width: 100%;
-}
-.I-wrapper_book .content .content_wrapper .book_detail .title_book .infor_book{
-    float: left;
-    width: 70%;
-}
-.I-wrapper_book .content .content_wrapper .book_detail .title_book .infor_book .infor_wrapper{
-    width: 100%;
-    padding: 0 0 0 20px;
-}
-.I-wrapper_book .content .content_wrapper .book_detail .title_book .infor_book .infor_wrapper .name{
-    border-top: 1px solid #a3a3a3;  
-    width: 100%;
-    padding: 30px 0 0 0;
-    font-size: 24px;
-    color: #337ab7;
-}
-.I-wrapper_book .content .content_wrapper .book_detail .title_book .infor_book .infor_wrapper .writer{
-    width: 100%;
-    font-size: 16px;
-    color: #000;
-    margin: 30px 0 0 0;
-}
-.I-wrapper_book .content .content_wrapper .book_detail .title_book .infor_book .infor_wrapper .category{
-    width: 100%;
-    font-size: 16px;
-    color: #000;
-    margin: 30px 0 0 0;
-}
-.I-wrapper_book .content .content_wrapper .book_detail .title_book .infor_book .infor_wrapper .view{
-    width: 100%;
-    font-size: 16px;
-    color: #000;
-    margin: 30px 0;
-}
-.I-wrapper_book .content .content_wrapper .book_detail .title_book .infor_book .infor_wrapper .status{
-    width: 100%;
-    font-size: 16px;
-    color: #000;
-    margin: 30px 0;
-    padding: 0 0 30px 0;
-    border-bottom: 1px solid #a3a3a3;  
-}
-.I-wrapper_book .content .content_wrapper .book_detail .title_book .infor_book .infor_wrapper .status.is-open span{
-    color: green
-}
-.I-wrapper_book .content .content_wrapper .book_detail .title_book .infor_book .infor_wrapper .order{
-    width: 100%;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 30px 0 0 0;
-}
-.I-wrapper_book .content .content_wrapper .book_detail .title_book .infor_book .infor_wrapper .order a{
-    width: 300px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #337ab7;
-    color: #fff;
-    font-weight: bold;
-}
-.I-wrapper_book .content .content_wrapper .book_detail .title_book .infor_book .infor_wrapper span{
-    font-weight: bold;
-}
-.I-wrapper_book .content .content_wrapper .book_detail .content_book{
-    width: 100%;
-    height: 100%;
-    padding: 20px 0;
-}
-.I-wrapper_book .content .book_related{
-    width: 100%;
-    height: 100%;
-    border: 1px solid #a3a3a3;
-    background-color: #fff;
-    border-radius: 5px;
-    margin: 20px 0;
-}
-.I-wrapper_book .content .book_related .related_wrapper{
-    width: 100%;
-    overflow: hidden;
-}
-.I-wrapper_book .content .book_related .related_wrapper .title{
-    width: 100%;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    font-size: 18px;
-    background-color: #337ab7;
-    color: #fff;
-    padding: 0 30px;
-}
-.I-wrapper_book .content .book_related .related_wrapper .content{
-    width: 100%;
-}
-.I-wrapper_book .content .book_related .related_wrapper .content .book_wrapper{
-    float: left;
-    width: calc(20% - 40px);
-    overflow: hidden;
-    margin: 20px;
-}
-
-
-
-.I-book{
-    width: 100%;
-    overflow: hidden;
-}
-.I-book .book_image{
-    width: 100%;
-}
-.I-book .book_image img{
-    width: 100%;
-}
-.I-book .book_title{
-    width: 100%;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-
-
-
-
-
