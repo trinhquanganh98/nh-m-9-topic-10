@@ -34,7 +34,7 @@ class CategoryController extends Controller
                                         ->groupBy('items.category_id')
                                         ->get();
         }
-
+        // dd($count_item);
         return view('admin.category.index', compact('count_item', 'categories'));
     }
 

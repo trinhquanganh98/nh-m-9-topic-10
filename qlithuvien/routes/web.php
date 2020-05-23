@@ -20,16 +20,32 @@ Route::get('/', 'FrontController@index')->name('customer.index');
 Route::get('danh-muc', 'FrontController@allcategory')->name('customer.allcategory');
 Route::get('danh-muc/{id}', 'FrontController@category')->name('customer.category');
 Route::get('sach/{id}', 'FrontController@book')->name('customer.book');
+Route::get('/you-are-admin', 'FrontController@you_are_admin')->name('customer.you-are-admin');
+// Route::get('trang-ca-nhan', 'FrontController@user_detail')->name('customer.user_detail');
 Route::post('book_finded', 'FrontController@book_finded')->name('customer.finded');
 
-Route::get('/customer_login', 'FrontController@login')->name('customer.login');
+// Trang Đặt Mượn sách
+Route::get('/customer_order', 'FrontController@user_order')->name('customer.order');
+Route::post('/customer_order', 'FrontController@user_bookorder')->name('customer.bookorder');
+
+// Đăng Nhập
+Route::get('/customer_login/{id}', 'FrontController@login')->name('customer.login');
 Route::post('/customer_login', 'CustomerController@postLogin')->name('customer.postLogin');
 
+// Đăng Kí
 Route::get('/customer_register', 'FrontController@register')->name('customer.register');
 Route::post('/customer_register', 'CustomerController@store')->name('customer.store');
 
-Route::post('/customer_logout', 'CustomerController@postLogout')->name('customer.postLogout');
+// Cập Nhật Thông Tin Cá Nhân
+Route::get('/customer_update', 'CustomerController@edit')->name('customer.edit');
+Route::post('/customer_update', 'CustomerController@update')->name('customer.update');
 
+// Đổi Mật Khẩu
+Route::get('/changePassword', 'CustomerController@changePassword')->name('customer.changePassword');
+Route::post('/changePassword', 'CustomerController@updatePassword')->name('customer.updatePassword');
+
+// Đăng Xuất
+Route::post('/customer_logout', 'CustomerController@postLogout')->name('customer.postLogout');
 
 
 
@@ -47,10 +63,47 @@ Route::get('book_delete/{id}', 'book_controller@book_delete')->name('book_delete
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/login', 'CustomerController@admingetLogin')->name('getlogin');
 Route::post('/loginAdmin', 'CustomerController@adminpostLogin')->name('login');
 
 Route::middleware(['checkacl:admin'], ['auth'])->group(function () {
 
+
+    // modulle user_class
+    Route::prefix('reader')->group(function () {
+
+        // Route::middleware(['checkacl:user-list'])->get('/', 'UserController@index')->name('user.index');
+        // Route::middleware(['checkacl:user-add'])->get('/create', 'UserController@create')->name('user.add');
+        // Route::middleware(['checkacl:user-add'])->post('/create', 'UserController@store')->name('user.store');
+        // Route::middleware(['checkacl:user-edit'])->get('/edit/{id}', 'UserController@edit')->name('user.edit');
+        // Route::middleware(['checkacl:user-edit'])->post('/edit/{id}', 'UserController@update')->name('user.edit');
+        // Route::middleware(['checkacl:user-delete'])->get('/delete/{id}', 'UserController@delete')->name('user.delete');
+    
+        Route::get('/', 'ReaderController@index')->name('reader.index');
+        // Route::get('/create', 'UserClassController@create')->name('user_class.add');
+        // Route::post('/create', 'UserClassController@store')->name('user_class.store');
+        Route::get('/edit/{id}', 'ReaderController@edit')->name('reader.edit');
+        Route::post('/edit/{id}', 'ReaderController@update')->name('reader.edit');
+        Route::get('/delete/{id}', 'ReaderController@delete')->name('reader.delete');
+    });
+
+    // modulle user_class
+    Route::prefix('user_class')->group(function () {
+
+        // Route::middleware(['checkacl:user-list'])->get('/', 'UserController@index')->name('user.index');
+        // Route::middleware(['checkacl:user-add'])->get('/create', 'UserController@create')->name('user.add');
+        // Route::middleware(['checkacl:user-add'])->post('/create', 'UserController@store')->name('user.store');
+        // Route::middleware(['checkacl:user-edit'])->get('/edit/{id}', 'UserController@edit')->name('user.edit');
+        // Route::middleware(['checkacl:user-edit'])->post('/edit/{id}', 'UserController@update')->name('user.edit');
+        // Route::middleware(['checkacl:user-delete'])->get('/delete/{id}', 'UserController@delete')->name('user.delete');
+    
+        Route::get('/', 'UserClassController@index')->name('user_class.index');
+        Route::get('/create', 'UserClassController@create')->name('user_class.add');
+        Route::post('/create', 'UserClassController@store')->name('user_class.store');
+        Route::get('/edit/{id}', 'UserClassController@edit')->name('user_class.edit');
+        Route::post('/edit/{id}', 'UserClassController@update')->name('user_class.edit');
+        Route::get('/delete/{id}', 'UserClassController@delete')->name('user_class.delete');
+    });
 
     // modulle warehouse
     Route::prefix('warehouse')->group(function () {
@@ -101,6 +154,7 @@ Route::middleware(['checkacl:admin'], ['auth'])->group(function () {
         // Route::get('/edit/{id}', 'ItemController@edit')->name('item.edit');
         // Route::post('/edit/{id}', 'ItemController@update')->name('item.edit');
         // Route::get('/delete/{id}', 'ItemController@delete')->name('item.delete');
+        Route::get('getLibrary', 'GalleryController@getLibrary')->name('discount.getLibrary');
     });
 
     // modulle item

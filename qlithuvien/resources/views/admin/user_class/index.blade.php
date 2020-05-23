@@ -7,39 +7,35 @@
 			<div class="table_wrapper">
 				<div class="title_table">
 					<div class="title_name">
-						Kho Sách
+						Danh Sách Danh Mục
 					</div>
 					<div class="title_side">
-						<a href="{{ route('item.add') }}" class="I-button bg_primary text_light">Thêm</a>
+						<a href="{{ route('user_class.add') }}" class="I-button bg_primary text_light">Thêm</a>
 					</div>
 				</div>
 				<table class="table table-bordered">
 			    	<thead>
 			      		<tr>
 					        <th>ID</th>
-					        <th>Tên</th>
-					        <th>Danh mục</th>
-					        <th>Tác Giả</th>
-					        <th>Lượt Xem</th>
+					        <th>Cấp Bậc Khách Hàng</th>
+					        <th>Số Lượng Có Thể Mượn</th>
 					        <th>Sửa</th>
 					        <th>Xóa</th>
 				      	</tr>
 			    	</thead>
 			    	<tbody>
-               			@foreach($items as $item)
+               			@foreach($user_class as $value)
 				      	<tr>
 					        <td>{{ $loop->index + 1 }}</td>
-					        <td>{{ $item->book_name }}</td>
-					        <td>{{ $item->category_name }}</td>
-					        <td>{{ $item->book_writer  }}</td>
-					        <td>{{ $item->book_view }}</td>
+					        <td>{{ $value->classification_name }}</td>
+					        <td>{{ $value->can_borrow  }}</td>
 					        <td>
-					        	<a href="{{ route('item.edit', ['id' => $item->id]) }}" class="action_table">
+					        	<a href="{{ route('user_class.edit', ['id' => $value->id]) }}" class="action_table">
 					        		<i class="far fa-edit"></i>
 					        	</a>
 					        </td>
 					        <td>
-					        	<a href="{{ route('item.delete', ['id' => $item->id]) }}" class="action_table">
+					        	<a href="{{ route('user_class.delete', ['id' => $value->id]) }}" class="action_table">
 					        		<i class="far fa-trash-alt"></i>
 					        	</a>
 					        </td>

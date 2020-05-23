@@ -107,18 +107,26 @@
 								</div>
 							</div>
 							<div class="item_nav">
-								<div class="link_nav">
+								<a href="/gallery" class="link_nav">
 									<i class="fas fa-images"></i>
+								</a>
+							</div>
+							<div class="item_nav">
+								<div class="link_nav">
+									<i class="fas fa-users"></i>
 								</div>
 								<div class="dropdown">
-									<a href="/gallery" class="sub_item">
-										Thư Viện Ảnh
+									<a href="/reader" class="sub_item">
+										Thông Tin Người Dùng
+									</a>
+									<a href="/user_class" class="sub_item">
+										Phân Loại Người Dùng
 									</a>
 								</div>
 							</div>
 							<div class="item_nav">
 								<div class="link_nav">
-									<i class="fas fa-users"></i>
+									<i class="fas fa-user"></i>
 								</div>
 								<div class="dropdown">
 									<a href="/roles" class="sub_item">

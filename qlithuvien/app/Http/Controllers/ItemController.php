@@ -25,9 +25,9 @@ class ItemController extends Controller
 
     public function index()
     {
-        $items = DB::table('book')
-            ->join('categories', 'book.book_category', '=', 'categories.id')
-            ->select('book.*', 'categories.category_name as category_name')
+        $items = DB::table('items')
+            ->join('categories', 'items.category_id', '=', 'categories.id')
+            ->select('items.*', 'categories.category_name as category_name')
             ->get();
         return view('admin.item.index', compact('items'));
     }
@@ -49,7 +49,7 @@ class ItemController extends Controller
             $itemCreate = $this->item->create([
                 'book_name' => $request->book_name,
                 'book_image' => $request->book_image,
-                'book_category' => $request->category_index,
+                'category_id' => $request->category_index,
                 'book_view' => '1',
                 'book_writer' => $request->book_writer,
                 'book_status' => '1',
@@ -72,10 +72,10 @@ class ItemController extends Controller
      */
     public function edit($id)
     {
-        $item = DB::table('book')
-            ->join('categories', 'book.book_category', '=', 'categories.id')
-            ->where('book.id', '=', $id)
-            ->select('book.*', 'categories.category_name as category_name')
+        $item = DB::table('items')
+            ->join('categories', 'items.category_id', '=', 'categories.id')
+            ->where('items.id', '=', $id)
+            ->select('items.*', 'categories.category_name as category_name')
             ->first();
         $gallery = $this->gallery->all();
         $categories = $this->category->all();;

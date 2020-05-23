@@ -1,8 +1,19 @@
 @extends('user.layout')
 @section('body')
 
+	
+	
 	<div class="I-wrapper_book">
 		<div class="wrapper">
+			@if ( Session::has('error') )
+				<div class="alert alert-danger alert-dismissible" role="alert">
+					<strong>{{ Session::get('error') }}</strong>
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+						<span class="sr-only">Close</span>
+					</button>
+				</div>
+			@endif
 			<div class="sidebar">
 				<div class="sidebar_wrapper">
 					<div class="title">
@@ -59,7 +70,7 @@
 										Trạng Thái: <span>Còn Sách</span>
 									</div>
 									<div class="order">
-										<a href=""> Đặt Sách </a>
+										<a data-toggle="modal" data-target="#order_book" > Đặt Sách </a>
 									</div>
 								</div>
 							</div>
@@ -93,6 +104,24 @@
 			</div>
 		</div>
 	</div>
+<div id="order_book" class="modal fade" role="dialog">
+  	<div class="modal-dialog">
+   		<div class="modal-content">
+	      	<div class="modal-header">
+	        	<button type="button" class="close" data-dismiss="modal">&times;</button>
+	        	<h4 class="modal-title">Xác Nhận Đăng Kí Mượn Sách</h4>
+	      	</div>
+	      	<div class="modal-footer">
+                <form id="order-form" action="{{ route('customer.bookorder') }}" method="post" style="display: none;" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" name="book_id" value="<?php echo $book->id ?>">
+                </form>
+	        	<a onclick="event.preventDefault(); document.getElementById('order-form').submit();" class="btn btn-success" data-dismiss="modal">Đăng Kí Mượn</a>
+	        	<button type="button" class="btn btn-default" data-dismiss="modal">Đóng</button>
+	      	</div>
+    	</div>
+  	</div>
+</div>
 
 @endsection()
 

@@ -25,6 +25,14 @@
 		    	<input type="email" class="form-control" id="email" name="email" required>
 		  	</div>
 		  	<div class="form-group">
+		    	<label for="phone">Số Điện Thoại</label>
+		    	<input type="text" class="form-control" id="phone" name="phone" required>
+		  	</div>
+		  	<div class="form-group">
+		    	<label for="address">Địa Chỉ</label>
+		    	<input type="text" class="form-control" id="address" name="address" required>
+		  	</div>
+		  	<div class="form-group">
 		    	<label for="pwd">Mật Khẩu :</label>
 		    	<input type="password" class="form-control" id="pwd" name="password" required>
 		  	</div>

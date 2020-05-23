@@ -3,7 +3,7 @@
 
 	<div class="I-form">
 		<div class="title">
-			Đăng Nhập
+			Thông Tin Cá Nhân
 		</div>
 		@if ( Session::has('error') )
 			<div class="alert alert-danger alert-dismissible" role="alert">
@@ -23,22 +23,23 @@
 				</button>
 			</div>
 		@endif
-		<form method="post" action="{{ route('customer.postLogin') }}" enctype="multipart/form-data">
+		<form method="post" action="{{ route('customer.changePassword') }}" enctype="multipart/form-data">
 			@csrf
-			<input type="hidden" name="screen" value="<?php echo $id ?>">
+			<input type="hidden" name="id" value="<?php echo $user->id ?>">
 		  	<div class="form-group">
-		    	<label for="email">Email :</label>
-		    	<input type="email" class="form-control" id="email" name="email" required>
+		    	<label for="oldPass">Mật Khẩu Cũ :</label>
+		    	<input type="password" class="form-control" id="oldPass" name="current-password" required>
 		  	</div>
 		  	<div class="form-group">
-		    	<label for="pwd">Mật Khẩu :</label>
-		    	<input type="password" class="form-control" id="pwd" name="password" required>
+		    	<label for="newPass">Mật Khẩu Mới :</label>
+		    	<input type="password" class="form-control" id="newPass" name="password" required>
 		  	</div>
-		  	<button type="submit" class="btn btn-default">Đăng Nhập</button>
-		  	<a href="/customer_register" class="btn btn-default">Đăng kí</a>
+		  	<div class="form-group">
+		    	<label for="password_confirmation">Nhập Lại Mật Khẩu :</label>
+		    	<input type="password" class="form-control" id="password_confirmation" name="password_confirmation" required>
+		  	</div>
+		  	<button type="submit" class="btn btn-default">Cập Nhật</button>
 		</form> 
 	</div>
 
 @endsection()
-
-
