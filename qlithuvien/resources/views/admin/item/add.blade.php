@@ -101,20 +101,8 @@
 		  	<div class="modal-dialog">
 		    <!-- Modal content-->
 			    <div class="modal-content">
-			      	<div class="modal-body" style="overflow: hidden;">
-						<?php foreach ($gallery as $key => $value): ?>
-							<div class="I-image">
-								<div class="image_wrapper">
-									<img src="{{asset($value->image_url)}}">
-								</div>
-								<div class="image_url">
-									{{asset($value->image_url)}}
-								</div>
-								<div class="image_title">
-									<?php echo $value->image_name ?>
-								</div>
-							</div>
-						<?php endforeach ?>
+			      	<div class="modal-body list_image_library" style="overflow: hidden;">
+			      		
 			      	</div>
 			    </div>
 			</div>
@@ -128,5 +116,7 @@
 		</script>
 	</div>
 </div>
+
+<script src="{{ asset('js/library.js') }}"></script>
 				
 @endsection()

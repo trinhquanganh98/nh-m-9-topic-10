@@ -29,10 +29,10 @@
 					        <td>{{ $loop->index + 1 }}</td>
 					        <td>{{ $category->category_name }}</td>
 					        <td>
-					        	<?php if ($total == 0): ?>
-						        	<?php echo $total ?>
+					        	<?php if (empty ($count_item[$category->id][0])): ?>
+						        	<?php echo 0 ?>
 					        	<?php else:  ?>
-					        		{{ $category->total }}
+					        		<?php echo $count_item[$category->id][0]->total ?>
 						        <?php endif ?>
 						    </td>
 					        <td>

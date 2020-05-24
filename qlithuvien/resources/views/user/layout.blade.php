@@ -30,13 +30,13 @@
 						</form>
 						<div class="login">
                         	@guest
-								<a href="/customer_login">Đăng Nhập</a>
+								<a href="{{ route('customer.login', ['id' => 0]) }}">Đăng Nhập</a>
 								<a href="/customer_register">Đăng Kí</a>
                         	@else
 								@if(Session::has('customer'))
-									<?php echo Session::get('customer')->customer['username'] ?>
+									<!-- <?php echo Session::get('customer')->customer['username'] ?> -->
 								@endif 
-								<a href="#">Trang Cá Nhân</a>
+								<a href="{{ route('customer.order') }}">Trang Cá Nhân</a>
 								<a href="{{ route('customer.postLogout') }}"
                                    onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();">

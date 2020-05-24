@@ -11,6 +11,10 @@
 		<link rel="stylesheet" href="{{ asset('css/responsive.css') }}" />
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 		<script src="{{ asset('js/jquery-3.4.1.min.js') }}"></script>
+		<script src="{{ asset('js/Chart.js') }}"></script>
+		<script src="{{ asset('js/utils.js') }}"></script>
+		<script src="{{ asset('js/analyser.js') }}"></script>
+		<script src="{{ asset('js/analytics.js') }}"></script>
 	</head>
 	<body> 
 		<header>
@@ -26,6 +30,9 @@
 						<a href="#" class="notification">
 							<i class="far fa-bell"></i>
 						</a>
+							@if(Session::has('customer'))
+								<?php echo Session::get('customer')->customer['username'] ?>
+							@endif 
 						<a href="#" class="user">
 							<i class="far fa-user"></i>
 						</a>
@@ -48,85 +55,48 @@
 								<div class="link_nav">
 									<i class="fas fa-home"></i>
 								</div>
-								<div class="dropdown">
-									<a href="#" class="sub_item">
-										Trang chủ
-									</a>
-									<a href="#" class="sub_item">
-										Trang Cá Nhân
-									</a>
-									<a href="/category" class="sub_item">
-										Danh mục
-									</a>
-									<a href="/resource" class="sub_item">
-										Nhà Cung Cấp
-									</a>
-									<a href="/trademark" class="sub_item">
-										Thương Hiệu
-									</a>
-									<a href="/item" class="sub_item">
-										Sản Phẩm
-									</a>
-								</div>
 							</div>
 							<div class="item_nav">
-								<div class="link_nav">
-									<i class="fas fa-archive"></i>
-								</div>
-								<div class="dropdown">
-									<a href="#" class="sub_item">
-										
-									</a>
-								</div>
-							</div>
-							<div class="item_nav">
-								<div class="link_nav">
-									<i class="fas fa-book"></i>
-								</div>
-								<div class="dropdown">
-									<a href="#" class="sub_item">
-										
-									</a>
-								</div>
-							</div>
-							<div class="item_nav">
-								<div class="link_nav">
+								<a href="/category" class="link_nav">
 									<i class="fas fa-bookmark"></i>
-								</div>
-								<div class="dropdown">
-									<a href="#" class="sub_item">
-										
-									</a>
-								</div>
+								</a>
 							</div>
 							<div class="item_nav">
-								<div class="link_nav">
+								<a href="/warehouse" class="link_nav">
+									<i class="fas fa-download"></i>
+								</a>
+							</div>
+							<div class="item_nav">
+								<a href="/item" class="link_nav">
+									<i class="fas fa-book"></i>
+								</a>
+							</div>
+							<div class="item_nav">
+								<a href="/gallery" class="link_nav">
 									<i class="fas fa-clone"></i>
-								</div>
+								</a>
 							</div>
 							<div class="item_nav">
-								<div class="link_nav">
-									<i class="fas fa-comment"></i>
-								</div>
-							</div>
-							<div class="item_nav">
-								<div class="link_nav">
-									<i class="fas fa-file"></i>
-								</div>
-							</div>
-							<div class="item_nav">
-								<div class="link_nav">
+								<a href="/gallery" class="link_nav">
 									<i class="fas fa-images"></i>
-								</div>
-								<div class="dropdown">
-									<a href="/gallery" class="sub_item">
-										Thư Viện Ảnh
-									</a>
-								</div>
+								</a>
 							</div>
 							<div class="item_nav">
 								<div class="link_nav">
 									<i class="fas fa-users"></i>
+								</div>
+								<div class="dropdown">
+									<a href="/reader" class="sub_item">
+										Thông Tin Người Dùng
+									</a>
+									<a href="/user_class" class="sub_item">
+										Phân Loại Người Dùng
+									</a>
+								</div>
+							</div>
+							<div class="item_nav">
+								<div class="link_nav">
+									<i class="fas fa-user"></i>
 								</div>
 								<div class="dropdown">
 									<a href="/roles" class="sub_item">

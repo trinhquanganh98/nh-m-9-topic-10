@@ -20,7 +20,6 @@
 					        <th>Tên</th>
 					        <th>Danh mục</th>
 					        <th>Tác Giả</th>
-					        <th>Trạng Thái</th>
 					        <th>Lượt Xem</th>
 					        <th>Sửa</th>
 					        <th>Xóa</th>
@@ -33,7 +32,6 @@
 					        <td>{{ $item->book_name }}</td>
 					        <td>{{ $item->category_name }}</td>
 					        <td>{{ $item->book_writer  }}</td>
-					        <td>{{ $item->book_status }}</td>
 					        <td>{{ $item->book_view }}</td>
 					        <td>
 					        	<a href="{{ route('item.edit', ['id' => $item->id]) }}" class="action_table">

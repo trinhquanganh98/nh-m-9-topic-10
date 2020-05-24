@@ -113,10 +113,24 @@
     width: 100%;
 }
 .I-body_list_book .content .book_wrapper{
+    position: relative;
     float: left;
     width: calc(16.66% - 40px);
     overflow: hidden;
     margin: 20px;
+}
+.I-body_list_book .content .book_wrapper .book_status{
+    position: absolute;
+    top: 15px;
+    left: 45px;
+    width: 100%;
+    height: 40px;
+    background-color: red;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(45deg);
 }
 
 .I-wrapper_book{
@@ -274,6 +288,9 @@
 .I-wrapper_book .content .content_wrapper .book_detail .title_book .infor_book .infor_wrapper .status.is-open span{
     color: green
 }
+.I-wrapper_book .content .content_wrapper .book_detail .title_book .infor_book .infor_wrapper .status.is-open span.is-out{
+    color: red
+}
 .I-wrapper_book .content .content_wrapper .book_detail .title_book .infor_book .infor_wrapper .order{
     width: 100%;
     height: 50px;
@@ -355,6 +372,11 @@
 }
 .I-book .book_image{
     width: 100%;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 .I-book .book_image img{
     width: 100%;
@@ -366,9 +388,165 @@
     align-items: center;
     justify-content: center;
 }
-
-
-
+.I-user_borrow{
+    width: 100%;
+    overflow: hidden;
+}
+.I-user_borrow .user_borrow_wrapper{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow{
+    float: left;
+    width: 50%;
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing,
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowed{
+    width: 100%;
+    overflow: hidden;
+    padding: 10px;
+    margin: 0 0 50px 0;
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrow_title{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    padding: 0 20px;
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrow_title .text{
+    margin-right: auto;
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrow_title .action{
+    margin-left: auto;
+    font-size: 16px;
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper{
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    overflow: hidden;
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .borrowing_header{
+    width: 100%;
+    height: 50px;
+    background-color: #f0eeee;
+    border-bottom: 1px solid #ccc;
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .book_id{
+    float: left;
+    width: 10%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .book_title{
+    float: left;
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .book_time{
+    float: left;
+    width: 30%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .book_status{
+    float: left;
+    width: 15%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .book_status span{
+    font-weight: bold;
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .book_status span.waiting{
+    color: #ffc107
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .book_status span.success{
+    color: #28a745
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .book_status span.done{
+    color: #007bff
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .book_status span.outdate{
+    color: #dc3545
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .borrowing_body{
+    width: 100%;
+    overflow: hidden;
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowing_wrapper .borrowing_body .borrowing_item{
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #ccc;
+}
+.I-user_borrow .user_borrow_wrapper .book_borrow .borrowed{
+    width: 100%;
+    overflow: hidden;
+}
+.I-user_borrow .user_borrow_wrapper .user_detail{
+    float: left;
+    width: 50%;
+    padding: 0 20px;
+}
+.I-user_borrow .user_borrow_wrapper .user_detail .user_title{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    padding: 0 20px;
+}
+.I-user_borrow .user_borrow_wrapper .user_detail .user_title .text{
+    
+}
+.I-user_borrow .user_borrow_wrapper .user_detail .user_content{
+    margin: 10px 0;
+    width: 100%;
+    overflow: hidden;
+    font-size: 16px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 0 20px;
+}
+.I-user_borrow .user_borrow_wrapper .user_detail .user_content .item{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.I-user_borrow .user_borrow_wrapper .user_detail .user_content .item .title{
+    width: 150px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+}
+.I-user_borrow .user_borrow_wrapper .user_detail .user_content .item .data{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.I-user_borrow .user_borrow_wrapper .user_detail .user_content .action{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 
 

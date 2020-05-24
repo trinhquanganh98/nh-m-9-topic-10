@@ -23,6 +23,11 @@
 			<div class="content">
 				<?php foreach ($new_item as $key => $value): ?>
 					<div class="book_wrapper">
+						@if($value->book_amount - $value->book_borrow <= 0)
+							<div class="book_status">
+								Hết sách
+							</div>
+						@endif
 						<a href="sach/<?php echo $value->id ?>" class="I-book">
 							<div class="book_image">
 								<img src="{{ asset($value->book_image) }}">

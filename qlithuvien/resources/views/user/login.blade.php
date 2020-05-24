@@ -5,7 +5,6 @@
 		<div class="title">
 			Đăng Nhập
 		</div>
-		<?php //Hiển thị thông báo lỗi?>
 		@if ( Session::has('error') )
 			<div class="alert alert-danger alert-dismissible" role="alert">
 				<strong>{{ Session::get('error') }}</strong>
@@ -15,8 +14,18 @@
 				</button>
 			</div>
 		@endif
+		@if ( Session::has('success') )
+			<div class="alert alert-success alert-dismissible" role="alert">
+				<strong>{{ Session::get('success') }}</strong>
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+					<span class="sr-only">Close</span>
+				</button>
+			</div>
+		@endif
 		<form method="post" action="{{ route('customer.postLogin') }}" enctype="multipart/form-data">
 			@csrf
+			<input type="hidden" name="screen" value="<?php echo $id ?>">
 		  	<div class="form-group">
 		    	<label for="email">Email :</label>
 		    	<input type="email" class="form-control" id="email" name="email" required>

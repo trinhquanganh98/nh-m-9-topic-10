@@ -89,7 +89,6 @@ class GalleryController extends Controller
 
     }
 
-
     public function delete($id)
     {
         try {
@@ -104,4 +103,13 @@ class GalleryController extends Controller
         }
 
     }
+
+    public function getLibrary()
+    {
+        $gallery = DB::table('gallery')->get();
+        return $gallery;
+    }
+
+
+
 }

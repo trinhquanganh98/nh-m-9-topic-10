@@ -43,6 +43,11 @@
 						<div class="list_book">
 							<?php foreach ($books as $key => $value): ?>
 								<div class="book_wrapper">
+									@if($value->book_amount - $value->book_borrow <= 0)
+										<div class="book_status">
+											Hết sách
+										</div>
+									@endif
 									<a href="{{ route('customer.book', ['id' => $value->id]) }}" class="I-book">
 										<div class="book_image">
 											<img src="{{ asset($value->book_image) }}">

@@ -67,7 +67,7 @@
 	position: absolute;
 	top: 45px;
 	left: 0;
-	width: 150px;
+	width: 170px;
 	padding: 10px;
 	background-color: #fff;
 	border: 1px solid #DDDDDD;
@@ -118,6 +118,22 @@
 	background-color: #fff;
 	border-radius: 5px;
     box-shadow: 0 0px 8px 2px #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.I-data .data_item_wrapper .data_item .data_wrapper{
+	font-weight: bold;
+}
+.I-data .data_item_wrapper .data_item .data_wrapper .title{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.I-data .data_item_wrapper .data_item .data_wrapper .data{
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .I-form_input{
 	width: 100%;
@@ -262,6 +278,8 @@
 	border: 1px solid #ccc;
 	border-radius: 5px;
 	padding: 10px 0;
+	height: 110px;
+	overflow-y: scroll;
 	display: none;
 	z-index: 999;
     box-shadow: 0 0px 8px 2px #ccc;
