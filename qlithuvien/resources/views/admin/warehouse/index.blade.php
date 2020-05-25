@@ -16,11 +16,11 @@
 				<table class="table table-bordered" id="myTable">
 			    	<thead>
 			      		<tr>
-					        <th onclick="sortListDir(0)">ID</th>
-					        <th onclick="sortListDir(1)">Tên Người Nhập Kho</th>
-					        <th onclick="sortListDir(2)">Tên sách </th>
-					        <th onclick="sortListDir(3)">Số Lượng Sản Phẩm</th>
-					        <th onclick="sortListDir(4)">Thời Gian</th>
+					        <th onclick="sortListDir(0, 1)">ID</th>
+					        <th onclick="sortListDir(1, 1)">Tên Người Nhập Kho</th>
+					        <th onclick="sortListDir(2, 1)">Tên sách </th>
+					        <th onclick="sortListDir(3, 1)">Số Lượng Sản Phẩm</th>
+					        <th onclick="sortListDir(4, 1)">Thời Gian</th>
 				      	</tr>
 			    	</thead>
 			    	<tbody>
@@ -40,5 +40,6 @@
 	</div>
 </div>
 <script src="{{ asset('js/warehouse.js') }}"></script>
+<script src="{{ asset('js/sort_table.js') }}"></script>
 				
 @endsection()

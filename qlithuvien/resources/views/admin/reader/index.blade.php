@@ -51,13 +51,13 @@
 						Tất Cả Người Dùng
 					</div>
 				</div>
-				<table class="table table-bordered">
+				<table class="table table-bordered" id="myTable">
 			    	<thead>
 			      		<tr>
-					        <th>ID</th>
-					        <th>Họ Và Tên</th>
-					        <th>Email</th>
-					        <th>Cấp Bậc Khách Hàng</th>
+					        <th onclick="sortListDir(0, 1)">ID</th>
+					        <th onclick="sortListDir(1, 1)">Họ Và Tên</th>
+					        <th onclick="sortListDir(2, 1)">Email</th>
+					        <th onclick="sortListDir(3, 1)">Cấp Bậc Khách Hàng</th>
 					        <th>Sửa</th>
 				      	</tr>
 			    	</thead>
@@ -81,5 +81,6 @@
 		</div>
 	</div>
 </div>
+<script src="{{ asset('js/sort_table.js') }}"></script>
 				
 @endsection()

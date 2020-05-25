@@ -69,6 +69,53 @@ Route::post('/loginAdmin', 'CustomerController@adminpostLogin')->name('login');
 Route::middleware(['checkacl:admin'], ['auth'])->group(function () {
 
 
+
+    // modulle user_class
+    Route::prefix('borrow_all')->group(function () {
+
+        // Route::middleware(['checkacl:user-list'])->get('/', 'UserController@index')->name('user.index');
+        // Route::middleware(['checkacl:user-add'])->get('/create', 'UserController@create')->name('user.add');
+        // Route::middleware(['checkacl:user-add'])->post('/create', 'UserController@store')->name('user.store');
+        // Route::middleware(['checkacl:user-edit'])->get('/edit/{id}', 'UserController@edit')->name('user.edit');
+        // Route::middleware(['checkacl:user-edit'])->post('/edit/{id}', 'UserController@update')->name('user.edit');
+        // Route::middleware(['checkacl:user-delete'])->get('/delete/{id}', 'UserController@delete')->name('user.delete');
+    
+        Route::get('/', 'BorrowAllController@index')->name('borrow_all.index');
+        Route::get('getBorrow', 'BorrowAllController@getBorrow')->name('borrow_all.getBorrow');
+    });
+
+    // modulle user_class
+    Route::prefix('borrow_back')->group(function () {
+
+        // Route::middleware(['checkacl:user-list'])->get('/', 'UserController@index')->name('user.index');
+        // Route::middleware(['checkacl:user-add'])->get('/create', 'UserController@create')->name('user.add');
+        // Route::middleware(['checkacl:user-add'])->post('/create', 'UserController@store')->name('user.store');
+        // Route::middleware(['checkacl:user-edit'])->get('/edit/{id}', 'UserController@edit')->name('user.edit');
+        // Route::middleware(['checkacl:user-edit'])->post('/edit/{id}', 'UserController@update')->name('user.edit');
+        // Route::middleware(['checkacl:user-delete'])->get('/delete/{id}', 'UserController@delete')->name('user.delete');
+    
+        Route::get('/', 'BorrowBackController@index')->name('borrow_back.index');
+        Route::get('/edit/{id}', 'BorrowBackController@edit')->name('borrow_back.edit');
+        Route::post('/edit/{id}', 'BorrowBackController@update')->name('borrow_back.edit');
+        Route::get('getBorrow', 'BorrowBackController@getBorrow')->name('borrow_back.getBorrow');
+    });
+
+    // modulle user_class
+    Route::prefix('borrow')->group(function () {
+
+        // Route::middleware(['checkacl:user-list'])->get('/', 'UserController@index')->name('user.index');
+        // Route::middleware(['checkacl:user-add'])->get('/create', 'UserController@create')->name('user.add');
+        // Route::middleware(['checkacl:user-add'])->post('/create', 'UserController@store')->name('user.store');
+        // Route::middleware(['checkacl:user-edit'])->get('/edit/{id}', 'UserController@edit')->name('user.edit');
+        // Route::middleware(['checkacl:user-edit'])->post('/edit/{id}', 'UserController@update')->name('user.edit');
+        // Route::middleware(['checkacl:user-delete'])->get('/delete/{id}', 'UserController@delete')->name('user.delete');
+    
+        Route::get('/', 'BorrowController@index')->name('borrow.index');
+        Route::get('/edit/{id}', 'BorrowController@edit')->name('borrow.edit');
+        Route::post('/edit/{id}', 'BorrowController@update')->name('borrow.edit');
+        Route::get('getBorrow', 'BorrowController@getBorrow')->name('borrow.getBorrow');
+    });
+
     // modulle user_class
     Route::prefix('reader')->group(function () {
 

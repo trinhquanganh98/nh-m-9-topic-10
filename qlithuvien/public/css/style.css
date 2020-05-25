@@ -175,6 +175,14 @@
 	width: 100%;
 	/*overflow: hidden;*/
 }
+.I-form_input .form_input_wrapper .form_input .body_form .input_wrapper .input_form select{
+	border: 1px solid #ccc;
+	width: 100%;
+	height: 40px;
+	padding: 0 10px;
+	border-radius: 5px;
+	font-size: 16px;
+}
 .I-form_input .form_input_wrapper .form_input .body_form .input_wrapper .input_form input{
 	border: 1px solid #ccc;
 	width: 100%;
@@ -499,4 +507,15 @@
 .I-image .image_url{
 	position: absolute;
 	z-index: -1;
+}
+.search_table{
+
+}
+.search_table input{
+	width: 100%;
+	height: 32px;
+}
+.search_table button{
+	width: 100%;
+	height: 32px;
 }

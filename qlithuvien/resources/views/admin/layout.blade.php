@@ -73,13 +73,24 @@
 							</div>
 							<div class="item_nav">
 								<a href="/gallery" class="link_nav">
-									<i class="fas fa-clone"></i>
+									<i class="fas fa-images"></i>
 								</a>
 							</div>
 							<div class="item_nav">
-								<a href="/gallery" class="link_nav">
-									<i class="fas fa-images"></i>
-								</a>
+								<div class="link_nav">
+									<i class="fas fa-clone"></i>
+								</div>
+								<div class="dropdown">
+									<a href="/borrow" class="sub_item">
+										Đặt Mượn
+									</a>
+									<a href="/borrow_back" class="sub_item">
+										Hoàn Trả
+									</a>
+									<a href="/borrow_all" class="sub_item">
+										Lịch Sử
+									</a>
+								</div>
 							</div>
 							<div class="item_nav">
 								<div class="link_nav">

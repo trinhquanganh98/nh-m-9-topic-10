@@ -17,7 +17,7 @@
 								Tên Người Dùng
 							</div>
 							<div class="input_form">
-								<input type="text" name="reader_name" value="<?php echo $user->name ?>">
+								<input type="text" name="reader_name" value="<?php echo $user->name ?>" disabled="">
 							</div>
 						</div>
 						

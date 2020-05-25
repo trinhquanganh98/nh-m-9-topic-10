@@ -21,7 +21,7 @@ class book_controller extends Controller
             'book_name'             => $request->book_name,
             'book_image' 			=> '1',
             'book_category'         => $request->book_category,
-            'book_view'             => '1',
+            'book_view'             => '0',
             'book_writer' 			=> $request->book_writer,
             'book_status' 			=>'1',
             'book_detail' 			=> $request->book_detail,

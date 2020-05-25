@@ -144,12 +144,12 @@ class FrontController extends Controller
                             $has_borrow = DB::table('user_book')
                                 ->where('user_book.book_id', '=', $book->id)
                                 ->where('user_book.user_id', '=', $user_id)
-                                ->where('user_book.status', '<=', 0)
-                                ->get();
+                                ->where('user_book.status', '>=', 1)
+                                ->first();
                             Session::forget('book');
-                            if ($has_borrow) {
-                                Session::flash('error', 'Bạn Đang Mượn cuốn sách này');
-                                return redirect()->back();
+                            if ($has_borrow != null) {
+                                Session::flash('error', 'Bạn Đang Đặt Mượn cuốn sách này');
+                                // return redirect()->back();
                             }else{
                                 try {
                                     DB::beginTransaction();
